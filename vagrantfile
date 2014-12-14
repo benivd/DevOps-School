@@ -1,5 +1,5 @@
 
-jjjj
+
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -7,8 +7,14 @@ jjjj
 VAGRANTFILE_API_VERSION = "2"
 
 $bootstrap = <<SCRIPT
-sudo apt-get update 
-sudo apt-get install firefox
+sudo apt-get -y update 
+sudo apt-get -y install firefox
+sudo apt-get -y install ubuntu-desktop
+sudo apt-get -y install tomcat7
+sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples
+sudo apt-get install default-jdk
+sudo apt-get install ant git
+
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -56,9 +62,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   # Don't boot with headless mode
   #   vb.gui = true
   #
-  #   # Use VBoxManage to customize the VM. For example to change memory:
-  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
-  # end
+ config.vm.provider "virtualbox" do |v|
+  v.memory = 1024
+v.cpus = 2
+end
+
   #
   # View the documentation for the provider you're using for more
   # information on available options.
@@ -132,4 +140,3 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   #   chef.validation_client_name = "ORGNAME-validator"
 end
-
