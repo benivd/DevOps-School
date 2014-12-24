@@ -1,14 +1,35 @@
-
-
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-$bootstrap = <<SCRIPT
-sudo apt-get update 
-sudo apt-get install firefox
+$script = <<SCRIPT
+#sudo apt-get -y update 
+#comment
+#number
+#another change
+echo I am provisioning...
+sudo apt-get install -y git
+sudo apt-get install -y tomcat
+##################
+#mkdir GitTest
+#cd GitTest1
+#remote add origin https://github.com/shaybonar/GitTest1.git
+#git init
+#vi README1.txt
+#i
+#This is the first  read me
+#:wq
+#git add README1 
+#git commit  -m 'First commit'
+#password? 
+#username?
+#git push origin master
+###################
+#sudo apt-get install -y firefox 
+#sudo apt-add-repository	-y ppa:mozillateam/firefox-next
+#sudo apt-get upgrade 
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -18,6 +39,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "hashicorp/precise64"
+  config.vm.provision "shell", inline: $script
+  
+  
+  
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -63,9 +88,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
-
-# Run the bootsrap script on start.
-  config.vm.provision "shell", inline: $bootstrap
   # Enable provisioning with CFEngine. CFEngine Community packages are
   # automatically installed. For example, configure the host as a
   # policy server and optionally a policy file to run:
@@ -74,8 +96,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   cf.am_policy_hub = true
   #   # cf.run_file = "motd.cf"
   # end
-  #config.vm.provision :shell, :inline =>"sudo apt-get install firefox"
-
   #
   # You can also configure and bootstrap a client to an existing
   # policy server:
@@ -132,4 +152,3 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   #   chef.validation_client_name = "ORGNAME-validator"
 end
-
