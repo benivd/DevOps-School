@@ -33,7 +33,6 @@ public class DemoServlet extends HttpServlet {
 		out.println("<html>");
 		out.println("<body> demo servlet test...</body>");
 		out.println("</html>");
-
 	}
 
 	/**
