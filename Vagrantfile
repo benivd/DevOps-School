@@ -1,6 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-
+#
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
@@ -9,9 +9,14 @@ sudo apt-get -y update
 sudo apt-get -y install firefox
 sudo apt-get -y install ubuntu-desktop
 sudo apt-get -y install tomcat7
-sudo apt-get -y install tomcat7-docs tomcat7-admin tomcat7-examples
-sudo apt-get install openjdk-7-jdk
+#sudo apt-get -y install tomcat7-docs tomcat7-admin tomcat7-examples
+sudo apt-get -y install default-jdk
 sudo apt-get -y install ant git
+cd /var/lib/tomcat7/webapps
+sudo git init
+sudo git clone https://github.com/benivd/DevOps-School.git
+cd DevOps-School
+cp sample.war /var/lib/tomcat7/webapps
 
 SCRIPT
 
