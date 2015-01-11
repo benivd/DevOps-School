@@ -12,12 +12,15 @@ sudo apt-get -y install tomcat7
 #sudo apt-get -y install tomcat7-docs tomcat7-admin tomcat7-examples
 sudo apt-get -y install default-jdk
 sudo apt-get -y install ant git
-cd /var/lib/tomcat7/webapps
-sudo git init
-sudo git clone https://github.com/benivd/DevOps-School.git
-cd DevOps-School
-cp sample.war /var/lib/tomcat7/webapps
-
+#cd /var/lib/tomcat7/webapps
+#sudo git init
+#sudo git clone https://github.com/benivd/DevOps-School.git
+#cd DevOps-School
+#cp sample.war /var/lib/tomcat7/webapps
+mkdir HelloWorld
+wget https://raw.githubusercontent.com/benivd/DevOps-School/master/HelloWorld/src/HelloWorld.java
+javac HelloWorld.java
+java HelloWorld
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
