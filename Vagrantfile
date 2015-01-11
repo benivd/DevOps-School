@@ -11,7 +11,7 @@ sudo apt-get -y install ubuntu-desktop
 sudo apt-get -y install tomcat7
 #sudo apt-get -y install tomcat7-docs tomcat7-admin tomcat7-examples
 sudo apt-get -y install default-jdk
-sudo apt-get -y install ant git
+#sudo apt-get -y install ant git
 #cd /var/lib/tomcat7/webapps
 #sudo git init
 #sudo git clone https://github.com/benivd/DevOps-School.git
