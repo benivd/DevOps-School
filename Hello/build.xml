@@ -1,10 +1,25 @@
-<project default="run" name="hello world-compile and run java class">
+<project default="execUp" name="hello world-compile and run java class">
+	<!--
 	<target name="run" depends="compile"> 
 		<java classname="HelloRacheli" >
 			<classpath path="result" />			
 		</java>
 	</target>
+	-->
 	<target name="compile">
 		<javac includeantruntime="false" srcdir="src" destdir="result" />
 	</target>
-</project>  
+	<target name="execUp" depends="compile">
+	    <exec executable="cmd">
+			<arg line="/c vagrant up" />
+		</exec>
+	</target>
+	
+	<!--
+	<target name="execDown" depends="execUp">
+		    <exec executable="cmd">
+				<arg line="/c vagrant destroy -f" />
+			</exec>
+		</target>
+		-->
+</project> 
