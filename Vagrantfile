@@ -13,7 +13,7 @@ export JRE_HOME
 export PATH
 cd /vagrant
 curl -OL http://downloads.atlassian.com/software/stash/downloads/atlassian-stash-2.0.1.tar.gz
-tar xz -C -f atlassian-stash-2.0.1.tar.gz
+tar xz -f atlassian-stash-2.0.1.tar.gz
 mkdir stash
 STASH_HOME=/vagrant/stash
 export STASH_HOME
