@@ -1,8 +1,10 @@
 #!/bin/bash
 sudo apt-get update
-sudo apt-get -y install git
 sudo apt-get -y install curl
 sudo apt-get -y install openjdk-7-jre 
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get -y install git
 JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
 export JAVA_HOME
