@@ -1,6 +1,0 @@
-2015-02-07 18:45:22,364 ERROR [localhost-startStop-1]  c.a.s.i.j.JdkApplicationEventCheck OpenJDK 64-Bit Server VM is an unsupported JVM. <a href="http://confluence.atlassian.com/x/pQqTE">Supported platforms</a>.
-2015-02-07 18:45:22,403 ERROR [localhost-startStop-1]  c.a.j.s.w.c.JohnsonContextLoaderListener Bypassing Spring ApplicationContext initialisation; a previous fatal error was found: OpenJDK 64-Bit Server VM is an unsupported JVM. <a href="http://confluence.atlassian.com/x/pQqTE">Supported platforms</a>.
-2015-02-07 18:45:23,801 ERROR [localhost-startStop-1]  c.a.j.s.w.c.s.JohnsonHttpRequestHandlerServlet Bypassing HttpRequestHandlerServlet [fileServerServlet] initialisation; Spring initialisation was bypassed
-2015-02-07 18:45:23,803 ERROR [localhost-startStop-1]  c.a.j.s.w.c.s.JohnsonHttpRequestHandlerServlet Bypassing HttpRequestHandlerServlet [scmServlet] initialisation; Spring initialisation was bypassed
-2015-02-07 18:45:23,805 ERROR [localhost-startStop-1]  c.a.j.s.w.c.s.JohnsonHttpRequestHandlerServlet Bypassing HttpRequestHandlerServlet [streamsEmptyActivityServlet] initialisation; Spring initialisation was bypassed
-2015-02-07 18:45:23,924 ERROR [localhost-startStop-1]  c.a.j.s.w.s.JohnsonDispatcherServlet Bypassing SpringMVC dispatcher [spring-mvc] initialisation; Spring initialisation was bypassed
