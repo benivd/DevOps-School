@@ -10,8 +10,7 @@ sudo apt-get -y install git
 #####Stash Install...######
 curl -OL http://www.atlassian.com/software/stash/downloads/binary/atlassian-stash-3.6.1.tar.gz
 tar xz -C /opt -f atlassian-stash-3.6.1.tar.gz
-sudo mkdir /opt/stash-home
-STASH_HOME=/opt/stash-home
+STASH_HOME=/home/stash
 export STASH_HOME
 
 #####Setting user that will run the stash service on startup######
@@ -19,7 +18,7 @@ sudo groupadd stash
 sudo useradd -m -s /bin/bash -g stash stash
 echo stash:stash | sudo chpasswd
 sudo chown stash.stash -R /opt/atlassian-stash-3.6.1
-sudo chown stash.stash -R /opt/stash-home
+sudo chown stash.stash -R STASH_HOME
 sudo cp /vagrant/stash /etc/init.d
 sudo chmod  755 /etc/init.d/stash
 sudo update-rc.d stash defaults
@@ -30,5 +29,5 @@ service stash start
 ####Installing jenkins####
 wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
-sudo apt-get update
-sudo apt-get install jenkins
+sudo apt-get -y update
+sudo apt-get -y install jenkins

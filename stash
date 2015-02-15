@@ -6,7 +6,8 @@ RUN_AS=stash
 # STASH_INSTALLATION: The path to the Stash installation. Its recommended to create a symbolic link to the latest version so
 # the process will still work after upgrades.
 STASH_INSTALLATION="/opt/atlassian-stash-3.6.1"
-STASH_HOME="/opt/stash-home"
+#STASH_HOME="/opt/stash-home"
+STASH_HOME="/home/stash"
 stashctl() {
         if [ "x$USER" != "x$RUN_AS" ]; then
                 su - "$RUN_AS" -c "export STASH_HOME=$STASH_HOME;$STASH_INSTALLATION/bin/$1"

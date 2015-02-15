@@ -1,0 +1,13 @@
+<project default="run" name="hello world-compile and run java class">
+	
+	<target name="run" depends="compile"> 
+		<java classname="HelloWorld" >
+			<classpath path="result" />			
+		</java>
+	</target>
+	
+	<target name="compile">
+		<mkdir dir="result"/>
+		<javac includeantruntime="false" srcdir="src" destdir="result" />
+	</target>
+</project>  
